@@ -1,6 +1,6 @@
 # YoloBook
 
-an automated pipeline for training custom YOLOv5 object detection models using the [YouTube Bounding Box](https://research.google.com/youtube-bb/) dataset
+an automated pipeline for training custom YOLO object detection models using the [YouTube Bounding Box](https://research.google.com/youtube-bb/) dataset
 
 pick object classes from a checkbox UI, run the cells, and get a trained model; the pipeline handles video downloading, frame extraction, label generation, and data splitting automatically
 
@@ -11,12 +11,12 @@ pick object classes from a checkbox UI, run the cells, and get a trained model; 
 the notebook (`YoloBook.ipynb`) walks through 9 steps:
 
 1. **select classes** -> choose from 23 object categories (animals, vehicles, etc.)
-2. **choose model size** -> yolov5s through yolov5x
+2. **choose model size** -> yolo11n through yolo11x
 3. **environment setup** -> auto-detects Colab vs local
 4. **validate** -> checks configuration before committing to a long run
 5. **generate config** -> creates dataset YAML and parameterized processing script
 6. **process data** -> downloads YouTube videos, extracts frames at labeled timestamps, generates YOLO-format bounding box annotations, remaps class IDs, and splits into train/val/test
-7. **train** -> runs YOLOv5 training with the generated dataset
+7. **train** -> runs YOLO11 training with the generated dataset
 8. **inspect** -> visual QA with random bounding box overlays
 9. **test** -> run inference on your own images or video
 
@@ -47,7 +47,6 @@ requires Python 3.8+, a CUDA-capable GPU, and ffmpeg installed on your system
 git clone https://github.com/c-w-a/yolobook.git
 cd yolobook
 pip install -r requirements.txt
-pip install -r yolov5/requirements.txt
 ```
 
 you also need the YouTube Bounding Box CSV files (`yt_bb_detection_train.csv` and `yt_bb_detection_validation.csv`) placed in `data/raw/`; these can be downloaded from the [YouTube-BB dataset page](https://research.google.com/youtube-bb/).
@@ -61,7 +60,7 @@ jupyter notebook YoloBook.ipynb
 
 person, cat, dog, horse, cow, elephant, bear, zebra, giraffe, car, truck, bus, boat, motorcycle, airplane, train, bicycle, potted plant, toilet, skateboard, knife, umbrella
 
-these are the 23 classes from the YouTube-BB dataset that overlap with COCO, enabling transfer learning from pre-trained YOLOv5 weights
+these are the 23 classes from the YouTube-BB dataset that overlap with COCO, enabling transfer learning from pre-trained YOLO11 weights
 
 ## license
 
