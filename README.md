@@ -1,4 +1,4 @@
-# YoloBook
+# YOLObook
 
 an automated pipeline for training custom YOLO object detection models using the [YouTube Bounding Box](https://research.google.com/youtube-bb/) dataset
 
